@@ -1,6 +1,7 @@
 package com.thedot.tictoccroc.domain.reservation.controller;
 
 import com.thedot.tictoccroc.domain.reservation.dto.search.SearchReservationParentRes;
+import com.thedot.tictoccroc.domain.reservation.dto.search.SearchReservationRes;
 import com.thedot.tictoccroc.domain.reservation.service.search.SearchReservationService;
 import com.thedot.tictoccroc.global.dto.ApiRes;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +19,13 @@ public class SearchReservationController {
 
   private final SearchReservationService searchReservationServiceImpl;
 
-  @GetMapping("/courseSchedule/{courseScheduleId}")
+  @GetMapping("/courseSchedule/{courseScheduleId}/parent")
   public ApiRes<List<SearchReservationParentRes>> parentsByCourseScheduleId(@PathVariable Long courseScheduleId) {
     return new ApiRes<>(searchReservationServiceImpl.parentsByCourseScheduleId(courseScheduleId));
+  }
+
+  @GetMapping("/courseSchedule/{courseScheduleId}")
+  public ApiRes<List<SearchReservationRes>> byCourseScheduleId(@PathVariable Long courseScheduleId) {
+    return new ApiRes<>(searchReservationServiceImpl.byCourseScheduleId(courseScheduleId));
   }
 }

@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface ReservationInReservationRepository extends ReservationRepository {
 
   @Query("SELECT SUM(r.numberOfParticipants) FROM Reservation r WHERE r.courseSchedule.id = :courseScheduleId")
-  int findNumberOfChildrenByCourseScheduleId(@Param("courseScheduleId") Long courseScheduleId);
+  Optional<Integer> findNumberOfChildrenByCourseScheduleId(@Param("courseScheduleId") Long courseScheduleId);
 
   @Query("SELECT r FROM Reservation r JOIN FETCH r.parent p WHERE r.courseSchedule.id = :courseScheduleId")
   List<Reservation> findByCourseScheduleId(@Param("courseScheduleId") Long courseScheduleId);

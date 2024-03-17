@@ -40,7 +40,7 @@ public class ValidationReservationServiceImpl implements ValidationReservationSe
       return false;
     }
 
-    return false;
+    return true;
   }
 
   private boolean parentExists(Long parentId) {
@@ -75,7 +75,7 @@ public class ValidationReservationServiceImpl implements ValidationReservationSe
 
   private boolean isValidNumberOfParticipants(Long courseScheduleId, int numberOfParticipants) {
     int maxParticipants = courseInReservationRepository.findMaxParticipantsByCourseScheduleId(courseScheduleId);
-    int currentReservedParticipants = reservationInReservationRepository.findNumberOfChildrenByCourseScheduleId(courseScheduleId);
+    int currentReservedParticipants = reservationInReservationRepository.findNumberOfChildrenByCourseScheduleId(courseScheduleId).orElse(0);
 
     return maxParticipants >= currentReservedParticipants + numberOfParticipants;
   }

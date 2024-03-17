@@ -9,6 +9,8 @@ import com.thedot.tictoccroc.domain.reservation.repository.ReservationInReservat
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 @RequiredArgsConstructor
 public class CreateReservationServiceImpl implements CreateReservationService {
@@ -32,6 +34,7 @@ public class CreateReservationServiceImpl implements CreateReservationService {
       .parent(Parent.builder().id(createReservationReq.getParentId()).build())
       .courseSchedule(CourseSchedule.builder().id(createReservationReq.getCourseScheduleId()).build())
       .numberOfParticipants(createReservationReq.getNumberOfParticipants())
+      .createAt(LocalDateTime.now())
       .build());
   }
 
