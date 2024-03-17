@@ -4,6 +4,7 @@ import com.thedot.tictoccroc.domain.reservation.dto.create.CreateReservationReq;
 import com.thedot.tictoccroc.domain.reservation.dto.create.CreateReservationRes;
 import com.thedot.tictoccroc.domain.reservation.service.create.CreateReservationService;
 import com.thedot.tictoccroc.global.dto.ApiRes;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +18,7 @@ public class CreateReservationController {
 
   private final CreateReservationService createReservationServiceImpl;
 
+  @Operation(summary = "예약 생성", description = "예약 요청 정보를 받아 예약을 생성합니다.")
   @PostMapping
   public ApiRes<CreateReservationRes> createOne(@RequestBody CreateReservationReq createReservationReq) {
     CreateReservationRes reservation = createReservationServiceImpl.createOne(createReservationReq);
