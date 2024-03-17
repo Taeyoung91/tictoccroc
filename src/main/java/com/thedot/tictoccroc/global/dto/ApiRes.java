@@ -12,6 +12,10 @@ public class ApiRes<T> {
   private Result result;
   private T data;
 
+  public ApiRes() {
+    this.result = new Result();
+  }
+
   public ApiRes(T data) {
     this.result = new Result();
     this.data = data;

@@ -1,4 +1,4 @@
-package com.thedot.tictoccroc.domain.reservation.dto;
+package com.thedot.tictoccroc.domain.reservation.dto.create;
 
 import com.thedot.tictoccroc.domain.model.Reservation;
 import lombok.Getter;

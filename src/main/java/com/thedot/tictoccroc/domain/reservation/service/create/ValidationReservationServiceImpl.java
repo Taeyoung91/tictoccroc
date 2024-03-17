@@ -3,7 +3,7 @@ package com.thedot.tictoccroc.domain.reservation.service.create;
 import com.thedot.tictoccroc.domain.model.CourseSchedule;
 import com.thedot.tictoccroc.domain.repository.CourseScheduleRepository;
 import com.thedot.tictoccroc.domain.repository.ParentRepository;
-import com.thedot.tictoccroc.domain.reservation.dto.CreateReservationReq;
+import com.thedot.tictoccroc.domain.reservation.dto.create.CreateReservationReq;
 import com.thedot.tictoccroc.domain.reservation.repository.CourseInReservationRepository;
 import com.thedot.tictoccroc.domain.reservation.repository.ReservationInReservationRepository;
 import lombok.RequiredArgsConstructor;

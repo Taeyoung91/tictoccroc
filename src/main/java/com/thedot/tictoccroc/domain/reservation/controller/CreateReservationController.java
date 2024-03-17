@@ -1,7 +1,7 @@
 package com.thedot.tictoccroc.domain.reservation.controller;
 
-import com.thedot.tictoccroc.domain.reservation.dto.CreateReservationReq;
-import com.thedot.tictoccroc.domain.reservation.dto.CreateReservationRes;
+import com.thedot.tictoccroc.domain.reservation.dto.create.CreateReservationReq;
+import com.thedot.tictoccroc.domain.reservation.dto.create.CreateReservationRes;
 import com.thedot.tictoccroc.domain.reservation.service.create.CreateReservationService;
 import com.thedot.tictoccroc.global.dto.ApiRes;
 import lombok.RequiredArgsConstructor;
